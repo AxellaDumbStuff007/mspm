@@ -1,5 +1,5 @@
 pkgname=mspm
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=0
 pkgdesc="A package manager with way too many sources"
 arch=('x86_64')
