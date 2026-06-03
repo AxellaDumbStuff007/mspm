@@ -6,7 +6,7 @@ Note: Package can currently only verify existence of AUR and Pacman packages
 Current release 0.0.2
 
 
-#To Do List
+##To Do List
 
 . Print out array and let user choose what package manager to install with
 
