@@ -1,5 +1,5 @@
 # mspm
-A package manager with way too many sources
+A package manager that looks everywhere
 
 Note: Package can currently only verify existence of AUR and Pacman packages
 
@@ -15,3 +15,5 @@ Current release 0.0.2
 . Add support for more package managers (Cargo, Brew, Apt, etc.)
 
 . ~~Stop struggling with Markdown~~ Solved!
+
+. Get contributors
