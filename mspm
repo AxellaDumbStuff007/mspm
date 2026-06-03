@@ -1,0 +1,31 @@
+#!/bin/bash
+$arch=('uname -m')
+if [ $1 ==  "-S" ]; then
+	if [[ $(command -v $2) ]]; then
+   		 echo $2 is already installed...
+		 exit 0
+        fi
+	else
+		echo Attempting to install package $2...
+		#Arch
+		echo Looking in Offical Arch Repository
+		if [ $arch != 'x86_64' ]; then
+			$archlarch = any
+		else
+			$archlarch = x86_64
+		for repo in extra extra-testing core core-testing multilib multilib-testing
+			curl -s --head http://archlinux.org/packages/$archlarch/repo/$2/ | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null
+			if [ $? = 0 ]; then
+				echo Package exists in Offical Arch Repository
+				$archlp = true
+			else
+				echo Package does not exist in Offical Arch Repository
+		#AUR
+		curl -s --head http://aur.archlinux.org/packages/$2 | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null
+		if [ $? = 0 ]; then
+			echo Package Exists in AUR
+			$aurex = true
+		else
+			echo Package does not exist in AUR
+			$aurex = false
+fi
