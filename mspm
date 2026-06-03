@@ -1,5 +1,7 @@
 #!/bin/bash
-$arch=('uname -m')
+declare -i n=0
+declare -a pex
+arch=('uname -m')
 if [ $1 ==  "-S" ]; then
 	if [[ $(command -v $2) ]]; then
    		 echo $2 is already installed...
@@ -17,15 +19,16 @@ if [ $1 ==  "-S" ]; then
 			curl -s --head http://archlinux.org/packages/$archlarch/repo/$2/ | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null
 			if [ $? = 0 ]; then
 				echo Package exists in Offical Arch Repository
-				$archlp = true
+				pex+=("[${!n}] Pac-Man")
+				n+=1
 			else
 				echo Package does not exist in Offical Arch Repository
 		#AUR
 		curl -s --head http://aur.archlinux.org/packages/$2 | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null
 		if [ $? = 0 ]; then
 			echo Package Exists in AUR
-			$aurex = true
+			pex+=("[${!n}] AUR")
+			n+=1
 		else
 			echo Package does not exist in AUR
-			$aurex = false
 fi
