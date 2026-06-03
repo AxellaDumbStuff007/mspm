@@ -14,4 +14,4 @@ Current release 0.0.2
 
 . Add support for more package managers (Cargo, Brew, Apt, etc.)
 
-. Stop struggling with Markdown
+. ~~Stop struggling with Markdown~~ Solved!
